@@ -1,9 +1,5 @@
 #include "Merge.h"
 
-void swap(std::vector<int> &nums1, int idx, std::vector<int> &nums2, int jdx)
-{
-}
-
 void merge(std::vector<int> &nums1, int m, std::vector<int> &nums2, int n)
 {
     int i_m = m - 1;
