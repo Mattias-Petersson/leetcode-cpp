@@ -6,28 +6,23 @@ void swap(std::vector<int> &nums1, int idx, std::vector<int> &nums2, int jdx)
 
 void merge(std::vector<int> &nums1, int m, std::vector<int> &nums2, int n)
 {
-    // Handle base cases, if n or m is empty:
-    if (n == 0)
-        return;
-    if (m == 0)
+    int i_m = m - 1;
+    int i_n = n - 1;
+    int i_mn = m + n - 1;
+
+    while (i_n >= 0)
     {
-        for (int i = 0; i < n; i++)
+        if (i_m >= 0 && nums1[i_m] > nums2[i_n])
         {
-            nums1[i] = nums2[i];
-        }
-    }
-    // Otherwise sort the two lists
-    while (m > 0 && n > 0)
-    {
-        if (nums1[m - 1] >= nums2[n - 1])
-        {
-            nums1[m + n - 1] = nums1[m - 1];
-            m--;
+            nums1[i_mn] = nums1[i_m];
+            i_mn--;
+            i_m--;
         }
         else
         {
-            nums1[m + n - 1] = nums2[n - 1];
-            n--;
+            nums1[i_mn] = nums2[i_n];
+            i_mn--;
+            i_n--;
         }
     }
 }
