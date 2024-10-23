@@ -17,7 +17,7 @@ void time_comparison()
     cout << "\n";
 
     cout << "[0, 1000] Elements: \n";
-    measure_time(100);
+    measure_time(1000);
     cout << "\n";
 }
 
